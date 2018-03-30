@@ -5,11 +5,13 @@ import VueRouter from 'vue-router'
 
 import View from './View.vue'
 
+import './components.js'
+
 Vue.use(VueRouter);
 
 const routes = [
-  { path: '/', component: View },
-  { path: '/page/:id', component: View },
+  { path: '/page/:id', component: View, name: "page" },
+  { path: '/foo/:id', component: View, name: "foo" },
 ];
 
 const router = new VueRouter({
@@ -21,7 +23,7 @@ var app = new Vue({
   //store,
   el: '#app',
   router,
-  //render: h => h(View),
+  //render: h => h(Main),
   computed: {
   },
   watch: {

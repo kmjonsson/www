@@ -1,0 +1,11 @@
+---
+title: Hello World
+
+body: |
+ This is the body
+
+ Do something :-)
+
+ <goto-page page='foo'>Goto foo</goto-page>
+
+  

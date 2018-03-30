@@ -61,7 +61,7 @@ module.exports = {
   devtool: '#eval-source-map'
 }
 
-if (true || process.env.NODE_ENV === 'production') {
+if (false && process.env.NODE_ENV === 'production') {
   const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html

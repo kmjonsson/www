@@ -1,0 +1,17 @@
+---
+title: Foobar
+
+body: |
+  Smurf
+
+  <goto-page page='page'>Goto Page</goto-page>
+
+  # H1
+
+  ## H2
+
+  ### H3
+
+  markdown is the new black
+
+  @page/Tjoho@
