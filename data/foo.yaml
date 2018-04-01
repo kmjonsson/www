@@ -1,5 +1,6 @@
 ---
 title: Foobar
+subtitle: There and back again...
 
 body: |
   Smurf
@@ -15,3 +16,28 @@ body: |
   markdown is the new black
 
   @page/Tjoho@
+
+  Smurf
+
+  <goto-page page='page'>Goto Page</goto-page>
+
+  # H1
+
+  ## H2
+
+  ### H3
+
+  markdown is the new black
+
+  Smurf
+
+  <goto-page page='page'>Goto Page</goto-page>
+
+  # H1
+
+  ## H2
+
+  ### H3
+
+  markdown is the new black
+

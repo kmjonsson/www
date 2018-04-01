@@ -1,0 +1,11 @@
+---
+title: www.fot.nu
+
+body: |
+ Welcome to www.fot.nu
+
+ <goto-page page='page'>Goto page</goto-page>
+
+ <goto-page page='foo'>Goto foo</goto-page>
+
+  
