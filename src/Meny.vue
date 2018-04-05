@@ -1,9 +1,6 @@
 
 
 <template>
-<!-- <div class="container">
-<div class="columns">
-<div class="column is-12-desktop is-offset-0-desktop"> -->
 <nav class="navbar is-success is-not-fixed-top">
   <div class="navbar-brand">
     <router-link :to="{name:'page',params: { id: 'home' }}" class="navbar-item">www.fot.nu</router-link>
@@ -15,15 +12,11 @@
   </div>
 
   <div id="navbarExampleTransparentExample" class="navbar-menu" v-bind:class="{ 'is-active': show }">
-    <div class="navbar-start" @click="show=false">
+    <div class="navbar-end" @click="show=false">
       <router-link v-for="m in meny" :to="{name:'page',params: { id: m.page }}" class="navbar-item" :key="m.title">{{m.title}}</router-link>
     </div>
   </div>
 </nav>
-<!--
-</div>
-</div>
-</div> -->
 </template>
 
 <script>
@@ -47,7 +40,7 @@ export default {
     load_page() {
       axios.get("data/meny.yaml", {
         'responseType': 'text'
-      }).then(r => yaml.load(r.data)).then(r => { console.log(r); this.meny = r; });
+      }).then(r => yaml.load(r.data)).then(r => { this.meny = r; });
     }
   },
 }
