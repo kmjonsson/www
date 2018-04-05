@@ -1,9 +1,9 @@
 
 
 <template>
-<div class="container">
+<!-- <div class="container">
 <div class="columns">
-<div class="column is-12-desktop is-offset-0-desktop">
+<div class="column is-12-desktop is-offset-0-desktop"> -->
 <nav class="navbar is-success is-not-fixed-top">
   <div class="navbar-brand">
     <router-link :to="{name:'page',params: { id: 'home' }}" class="navbar-item">www.fot.nu</router-link>
@@ -20,9 +20,10 @@
     </div>
   </div>
 </nav>
+<!--
 </div>
 </div>
-</div>
+</div> -->
 </template>
 
 <script>
@@ -31,7 +32,7 @@ import yaml from 'yaml-js'
 import axios from 'axios'
 
 export default {
-  name: 'app',
+  name: 'Meny',
   props: ['page'],
   data () {
     return {

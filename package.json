@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --hot --host 0.0.0.0",
-    "devWin": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "devWin": "webpack-dev-server --mode development --open --hot",
     "build": "cross-env NODE_ENV=production webpack --mode production --progress --hide-modules",
     "bdev": "cross-env NODE_ENV=development webpack --mode development --progress --hide-modules",
     "prod": "cross-env NODE_ENV=development webpack-dev-server --host 0.0.0.0",
