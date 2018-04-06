@@ -1,7 +1,7 @@
 ---
 title: www.fot.nu
-
-body: |
+focusImage: fot
+---
  Welcome to www.fot.nu
 
  <goto-page page='page'>Goto page</goto-page>

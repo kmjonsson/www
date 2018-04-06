@@ -1,8 +1,13 @@
 ---
 title: Foobar
 subtitle: There and back again...
-
-body: |
+focusImage: radio
+subMeny:
+  - title: Prefix
+    page: ham-prefix
+  - title: Home
+    page: home
+---
   Smurf
 
   <goto-page page='page'>Goto Page</goto-page>
@@ -16,28 +21,3 @@ body: |
   markdown is the new black
 
   @page/Tjoho@
-
-  Smurf
-
-  <goto-page page='page'>Goto Page</goto-page>
-
-  # H1
-
-  ## H2
-
-  ### H3
-
-  markdown is the new black
-
-  Smurf
-
-  <goto-page page='page'>Goto Page</goto-page>
-
-  # H1
-
-  ## H2
-
-  ### H3
-
-  markdown is the new black
-

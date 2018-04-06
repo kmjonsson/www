@@ -12,4 +12,4 @@ var linkext = function () {
     ]
   };
 
-export default new showdown.Converter({ extensions: [linkext]});
+export default new showdown.Converter({ extensions: [linkext], tables: true });

@@ -8,3 +8,6 @@
 -
   title: Foo
   page: foo
+-
+  title: Prefix
+  page: ham-prefix

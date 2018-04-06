@@ -2,13 +2,15 @@
 import VueRouter from 'vue-router'
 
 import View from './View.vue'
+import Error404 from './Error404.vue'
 
 const routes = [
-  { path: '/page/:id', component: View, name: "page" },
+  { path: '/view/:id', component: View, name: "page" },
   { path: '/', redirect: { name: 'page',params: { id: 'home' }} },
+  { path: '*', component: Error404 },
 ];
 
 export default new VueRouter({
-  // mode: 'history',
+  mode: 'history',
   routes
 });

@@ -12,8 +12,10 @@
         </div>
           <component v-bind:is="body"></component>
       </div>
-      <div class="column is-3-desktop is-hidden-touch has-text-right">
-        <img class="focus-image" src="https://www.fot.nu/themes/radio_tower256.png" alt="radio"/>
+      <div class="column is-3-desktop is-hidden-touch">
+        <FocusImage v-if="page.focusImage" :page="page"/>
+        <hr v-if="page.focusImage && page.subMeny" />
+        <SubMeny v-if="page.subMeny" :submeny="page.subMeny"/>
       </div>
     </div>
   </div>
@@ -22,6 +24,9 @@
 <script>
 
 import converter from './md.js'
+
+import FocusImage from './FocusImage.vue'
+import SubMeny from './SubMeny.vue'
 
 export default {
   name: 'DefaultView',
@@ -37,14 +42,14 @@ export default {
       }
     }
   },
+  components: {
+    FocusImage,SubMeny
+  }
 }
 
 </script>
 
 <style scoped>
-img.focus-image {
-  padding-top: 0.75rem;
-}
 div.indrag {
   margin-left: 8.33333%;
   padding: 0.75rem;

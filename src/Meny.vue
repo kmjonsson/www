@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     load_page() {
-      axios.get("data/meny.yaml", {
+      axios.get("/data/meny.yaml", {
         'responseType': 'text'
       }).then(r => yaml.load(r.data)).then(r => { this.meny = r; });
     }
