@@ -4,7 +4,7 @@
   <div class="content">
     <ul>
       <li v-for="m in submeny" :key="m.title">
-        <router-link :to="{name:'page',params: { id: m.page }}" >{{m.title}}</router-link>
+        <Link :link="m"/>
       </li>
     </ul>
   </div>
@@ -12,9 +12,14 @@
 
 <script>
 
+import Link from './Link.vue'
+
 export default {
   name: 'SubMeny',
-  props: ['submeny']
+  props: ['submeny'],
+  components: {
+    Link
+  }
 }
 
 </script>

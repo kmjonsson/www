@@ -1,28 +1,29 @@
 
 
 <template>
-<nav class="navbar is-success is-not-fixed-top">
-  <div class="navbar-brand">
-    <router-link :to="{name:'page',params: { id: 'home' }}" class="navbar-item">www.fot.nu</router-link>
-    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample" @click="show = !show" v-bind:class="{ 'is-active': show }">
-      <span></span>
-      <span></span>
-      <span></span>
+  <nav class="navbar is-success is-not-fixed-top">
+    <div class="navbar-brand">
+      <Link :link="{page:'home',title:'www.fot.nu'}" link_class="navbar-item"/>
+      <div class="navbar-burger burger" data-target="navbarExampleTransparentExample" @click="show = !show" v-bind:class="{ 'is-active': show }">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-  </div>
 
-  <div id="navbarExampleTransparentExample" class="navbar-menu" v-bind:class="{ 'is-active': show }">
-    <div class="navbar-end" @click="show=false">
-      <router-link v-for="m in meny" :to="{name:'page',params: { id: m.page }}" class="navbar-item" :key="m.title">{{m.title}}</router-link>
+    <div id="navbarExampleTransparentExample" class="navbar-menu" v-bind:class="{ 'is-active': show }">
+      <div class="navbar-end" @click="show=false">
+        <Link v-for="m in meny" link_class="navbar-item" :link="m" :key="m.title"></Link>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 </template>
 
 <script>
 
 import yaml from 'yaml-js'
 import axios from 'axios'
+import Link from './Link.vue'
 
 export default {
   name: 'Meny',
@@ -43,6 +44,9 @@ export default {
       }).then(r => yaml.load(r.data)).then(r => { this.meny = r; });
     }
   },
+  components: {
+    Link
+  }
 }
 
 </script>
