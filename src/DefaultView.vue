@@ -18,6 +18,12 @@
         <SubMeny v-if="page.subMeny" :submeny="page.subMeny"/>
       </div>
     </div>
+    <div class="columns">
+        <div class="column is-12 is-hidden-desktop ">
+        <hr v-if="page.subMeny" />
+        <SubMeny v-if="page.subMeny" :submeny="page.subMeny"/>
+      </div>
+    </div>
   </div>
 </template>
 
