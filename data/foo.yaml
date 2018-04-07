@@ -7,6 +7,8 @@ subMeny:
     page: ham-prefix
   - title: Home
     page: home
+  - title: HPC2N
+    url: https://www.hpc2n.umu.se
 ---
   Smurf
 
