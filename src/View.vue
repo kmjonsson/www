@@ -39,9 +39,7 @@ export default {
     }
   },
   watch: {
-    'id' (to, from) {
-      this.load();
-    },
+    'id': 'load'
   },
   methods: {
     load () {
