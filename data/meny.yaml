@@ -3,14 +3,8 @@
   title: About
   page: about
 -
-  title: Page
-  page: page
--
-  title: Foo
-  page: foo
--
-  title: Prefix
-  page: ham-prefix
--
-  title: HPC2N
-  url: https://www.hpc2n.umu.se
+  title: Ham Radio
+  page: ham
+#-
+#  title: HPC2N
+#  url: https://www.hpc2n.umu.se

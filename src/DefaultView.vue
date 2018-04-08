@@ -14,14 +14,14 @@
       </div>
       <div class="column is-3-desktop is-hidden-touch">
         <FocusImage v-if="page.focusImage" :page="page"/>
-        <hr v-if="page.focusImage && page.subMeny" />
-        <SubMeny v-if="page.subMeny" :submeny="page.subMeny"/>
+        <hr v-if="page.focusImage && page.links" />
+        <SubMeny v-if="page.links" :submeny="page.links"/>
       </div>
     </div>
     <div class="columns">
         <div class="column is-12 is-hidden-desktop ">
-        <hr v-if="page.subMeny" />
-        <SubMeny v-if="page.subMeny" :submeny="page.subMeny"/>
+        <hr v-if="page.links" />
+        <SubMeny v-if="page.links" :submeny="page.links"/>
       </div>
     </div>
   </div>

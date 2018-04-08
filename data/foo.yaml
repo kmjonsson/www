@@ -2,7 +2,7 @@
 title: Foobar
 subtitle: There and back again...
 focusImage: radio
-subMeny:
+links:
   - title: Prefix
     page: ham-prefix
   - title: Home

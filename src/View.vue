@@ -20,15 +20,15 @@ import Error404 from './Error404.vue'
 
 export default {
   name: 'MyView',
+  props: ['id'],
   data () {
     return {
-      id: '',
       page: null,
       notFound: null,
     }
   },
   created () {
-    this.id = this.$route.params.id;
+    this.load();
   },
   computed: {
     view_component() {
@@ -39,12 +39,14 @@ export default {
     }
   },
   watch: {
-    '$route' (to, from) {
-      this.id = this.$route.params.id;
+    'id' (to, from) {
+      this.load();
+    },
+  },
+  methods: {
+    load () {
       this.page = null;
       this.notFound = null;
-    },
-    'id' (to, from) {
       axios.get("/data/" + this.id + ".yaml", {
         'responseType': 'text'
       }).then(r => {
@@ -57,7 +59,7 @@ export default {
       .catch(e => {
         this.notFound = "'/view/" + this.id + "' does not exist";
       });
-    }
+    },
   },
   components: {
     DefaultView,Error404

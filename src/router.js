@@ -5,7 +5,7 @@ import View from './View.vue'
 import Error404 from './Error404.vue'
 
 const routes = [
-  { path: '/view/:id', component: View, name: "page" },
+  { path: '/view/:id', component: View, name: "page", props: true },
   { path: '/', redirect: { name: 'page',params: { id: 'home' }} },
   { path: '*', component: Error404 },
 ];
