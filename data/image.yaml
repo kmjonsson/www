@@ -1,0 +1,15 @@
+---
+title: image
+# focusImage: plane
+view: ImageView
+images:
+  - https://g9.fot.nu/object/originalImageObj17885.jpg
+  - https://g9.fot.nu/object/originalImageObj17891.jpg
+---
+<div class="modal is-active">
+  <div class="modal-background"></div>
+  <div class="modal-content" style="margin: 0 auto;height: calc(100vh - 150px);width: calc(100vw - 150px);background: url('https://g9.fot.nu/object/originalImageObj17885.jpg') no-repeat;background-size: contain;  background-position: center; ">
+      <!-- <img src="https://g9.fot.nu/object/originalImageObj17891.jpg"> -->
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>

@@ -16,6 +16,7 @@ import yaml from 'yaml-js'
 import axios from 'axios'
 
 import DefaultView from './DefaultView.vue'
+import ImageView from './ImageView.vue'
 import Error404 from './Error404.vue'
 
 export default {
@@ -60,7 +61,7 @@ export default {
     },
   },
   components: {
-    DefaultView,Error404
+    DefaultView,Error404,ImageView
   }
 }
 
