@@ -11,12 +11,18 @@
           </div>
         </div>
           <!-- <component v-bind:is="body"></component> -->
-          <div class="modal is-active">
-            <div class="modal-background"></div>
-            <transition name="fade" mode="out-in">
-            <div v-if="imageStyle" class="modal-content image" :style="imageStyle" @click="nextImage"></div>
+          <div class="images">
+            <img :src="thumbUrl(n)" v-for="(n,j) in images" :key="j" @click="show(j)" />
+          </div>
+          <div class="modal" :class="{'is-active': large}">
+            <div class="modal-background" style="background-color: rgba(30, 30, 30);"></div>
+            <transition v-on:after-leave="showImage" name="fade">
+            <div v-if="imageStyle" class="modal-content image" :style="imageStyle" >
+                <img :src="imageUrl"style="width: 50%; height:100%;  opacity: 0; position: fixed; left: 0" @click="prevImage"/>
+                <img :src="imageUrl"style="width: 50%; height:100%;  opacity: 0; position: fixed; right: 0" @click="nextImage" v-on:keyup.space="nextImage"/>
+            </div>
             </transition>
-            <button class="modal-close is-large" aria-label="close"></button>
+            <button class="modal-close is-large" aria-label="close" @click="hide()"></button>
           </div>
       </div>
     </div>
@@ -34,17 +40,19 @@ export default {
   name: 'DefaultView',
   props: ['page'],
   created() {
-    console.log(this);
-    this.nextImage();
+    for(let i=0;i<7;i++) {
+      this.images.push(parseInt(Math.random() * 60000));
+    }
+    console.log(this.images);
   },
   data () {
     return {
-      images: [
-        'https://g9.fot.nu/object/originalImageObj17885.jpg',
-        'https://g9.fot.nu/object/originalImageObj17894.jpg'
-      ],
+      images: [],
       imageStyle: null,
-      i: 17894,
+      imageUrl: null,
+      i: 0,
+      first: true,
+      large: false,
     }
   },
   computed: {
@@ -58,20 +66,42 @@ export default {
     FocusImage,SubMeny
   },
   methods: {
+    hide() {
+      this.large = false;
+      this.imageStyle = null;
+      this.imageUrl = null;
+      this.first = true;
+    },
+    show(i) {
+      this.large = true;
+      this.i = i;
+      this.loadImage(this.smallUrl(this.images[this.i]));
+    },
+    smallUrl(i) {
+      return 'https://g9.fot.nu/object/small'+i+'.jpg';
+    },
+    thumbUrl(i) {
+      return 'https://g9.fot.nu/object/thumb'+i+'.jpg';
+    },
+    prevImage() {
+      if(this.i > 0) {
+        this.show(this.i-1);
+      }
+    },
     nextImage() {
-      console.log("flärp");
-      //this.i = (++this.i) % 2;
-      //this.loadImage(this.images[this.i]);
-      this.i++;
-      //this.loadImage('https://g9.fot.nu/object/originalImageObj'+this.i+'.jpg')
-      this.loadImage('https://g9.fot.nu/object/small'+this.i+'.jpg')
+      if(this.i < this.images.length-1) {
+        this.show(this.i+1);
+      }
     },
     loadImage(url) {
       this.imageStyle = null;
+      this.imageUrl = url;
       return new Promise(function(resolve, reject) {
         var img = new Image()
         img.onload = function() {
-          this.imageStyle = { 'background-image': "url(" + url + ")" };
+          if(this.first) {
+            this.showImage();
+          }
           resolve(url)
         }.bind(this);
         img.onerror = function() {
@@ -79,6 +109,10 @@ export default {
         }
         img.src=url;
       }.bind(this));
+    },
+    showImage() {
+      this.imageStyle = { 'background-image': "url(" + this.imageUrl + ")"};
+      this.first = false;
     }
   }
 }
